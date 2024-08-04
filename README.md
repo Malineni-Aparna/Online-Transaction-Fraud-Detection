@@ -27,5 +27,9 @@ Performance of model
 # 
 ### Snippets of Project
 #
+![image](https://github.com/user-attachments/assets/80117e69-2f48-4cd2-b94b-1c3ce8cab6cb)
+![image](https://github.com/user-attachments/assets/520cdb25-7a1d-4829-ac7d-55082e77de7c)
+![image](https://github.com/user-attachments/assets/3ace9962-7131-4f78-a2d5-ef5ee65ffd53)
+![image](https://github.com/user-attachments/assets/9bba3186-b33e-495f-a974-732a864fab60)
 
 
