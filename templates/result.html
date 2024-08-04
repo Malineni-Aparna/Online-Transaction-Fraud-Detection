@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Transaction Fraud Detection - Result</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+    .container{
+    margin-top:30px;
+    border-radius:5%;
+    margin-left:300px;
+    width:60%;
+    background-color:#9DB2BF;
+    }
+    .container1{
+    margin-top:30px;
+    border-radius:5%;
+    margin-left:300px;
+    width:60%;
+    background-color:#9DB2BF;
+    }
+      .result-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+      }
+
+      .result-title {
+        font-weight: bold;
+        color: #1a202c;
+        padding: 2rem;
+        /* background-color: #ebf8ff; */
+        margin-bottom: 2rem;
+      }
+
+      .result-message {
+        font-size: 25px;
+        font-weight: bold;
+        color: #1a202c;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      }
+
+      .fraud {
+        background-color: #ffcccc;
+      }
+
+      .valid {
+        background-color: #ccffcc;
+      }
+      body{
+      background-color:#ACBCFF;
+      }
+      .again{
+      margin-top:30px;
+      padding-left:2%;
+      padding-bottom:20%;
+      }
+      .submit{
+      border:2px solid green;
+      color:red;
+      backgroun-dolor:#E6FFFD;
+      border-radius:10%;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {});
+    </script>
+  </head>
+  <body>
+    <div class="result-container w-full h-screen" id="result-container-id">
+      <h1
+        class="text-4xl w-full font-bold py-4 text-center text-blue-800 bg-blue-100"
+      >
+        Online Transaction Fraud Detection
+      </h1>
+      <div class="result-message h-screen pt-16" id="result">
+        {% if pred %} {% if pred == 'Fraud' %}
+        <p class="fraud">This is a fraud transaction.</p>
+        <div class="container">
+        <p>
+          We regret to inform you that your recent transaction has been deemed
+          invalid. After careful analysis and evaluation, our system has
+          determined that the transaction does not meet the necessary criteria
+          for validation. This decision is based on various factors, including
+          but not limited to transaction details, security protocols, and
+          established patterns of fraudulent or suspicious activities.
+        </p>
+          </div>
+
+        {% else %}
+        <p class="valid">This is not a fraud transaction.</p><button onclick="speakWeather()">Speak</button>
+        <div class="container1">
+        <p>We are happy to inform you that your transaction is not having fraudulent
+          behaviour. You can continue with your payment.
+        </p>
+        {% endif %} {% endif %}
+            <div class="again">
+    <button class="submit" ><a href="/" action="/">Predict Again</a></button>
+  </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+<script>
+  function speakWeather(){
+    var predictedValue="{{pred}}";
+    var utterance=new SpeechSynthesisUtterance();
+    utterance.text="This is"+predictedValue+ "transaction";
+    speechSynthesis.speak(utterance);
+  }
+</script>
+  </html>
